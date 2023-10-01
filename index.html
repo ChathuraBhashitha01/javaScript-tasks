@@ -4,43 +4,37 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="assets/myScript.js"></script>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
 </head>
 <body>
-<section class="container mt-5">
-<!--    <h1 id="h1ID">What is BOM & What is DOM</h1>-->
-<!--    <h1 class="h1Class">What is BOM & What is DOM</h1>-->
-<!--    <h2 id="h2ID">What really JS DO?</h2>-->
-<!--    <h2 class="h1Class">What really JS DO?</h2>-->
-<!--    <hr>-->
-<!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dolorum eos esse eveniet harum magni maiores maxime optio provident quaerat quidem, quis vel. Accusamus consequuntur excepturi impedit sapiente temporibus voluptates!</p>-->
-<!--    <input class="form-control" type="text" name="cusName">-->
-<!--    <button class="btn btn-danger mt-3">Test</button>-->
+<section class="container">
+<h1>Task Generator.!</h1>
+<div class="row">
+    <div class="col-4">
+        <input id="txt" class="form-control" type="text" placeholder="Input a Task">
+        <button id="btn" class="btn btn-danger mt-2">Add Task</button>
+    </div>
+    <div class="offset-1 col-3 shadow overflow-x-hidden" style="height: 70vh">
+        <ol id="list" class="list-group p-2">
+            <li class="list-group-item">Task One</li>
 
-    <section class="row">
-        <!--Case One-->
-        <div class="col">
-            <h1>Hello There How are you.?</h1>
-            <input id="txt" class="form-control" type="text" placeholder="Input Something">
-            <button id="btn1" class="mt-2 btn btn-danger">Change Text</button>
-        </div>
-
-    </section>
+        </ol>
+    </div>
+</div>
 </section>
 <script>
-    // document.querySelector('.h1Class').addEventListener("click",function(){
-    //     document.querySelector('.h1Class').remove();
-    // });
-    //
-    // document.querySelector("button").addEventListener("click",function(){
-    //     document.querySelector('input').value;
-    //     document.querySelector('h1').innerText=document.querySelector('input').value;
-    // });
-    document.querySelector('#txt').addEventListener("keyup",function(){
-        document.querySelector('h1').innerText=document.querySelector("input").value;
+    let btn=document.querySelector("#btn");
+    let ol=document.querySelector("#list");
+
+    btn.addEventListener("click",function (){
+        let inputValue=document.querySelector("#txt").value;
+        let li=document.createElement("li");
+        li.setAttribute("class","list-group-item");
+        li.textContent=inputValue;
+        ol.append(li);
+
     });
-    document.querySelector("button").addEventListener("click",function(){
-        document.querySelector("h1").style.color = "red";;
-    });
+
 </script>
 </body>
 </html>
